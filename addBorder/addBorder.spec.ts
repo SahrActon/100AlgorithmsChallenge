@@ -1,19 +1,24 @@
-import { addBorder } from './addBorder';
+import { addBorder } from "./addBorder";
 
-xdescribe(addBorder.name, () => {
-    it('Test 1', () => {
-        // arrange
-        const data = ['abc, ded'];
+describe(addBorder.name, () => {
+  // need to do this test again
+  xit("should return an 4 stars wall", () => {
+    // Given
+    const data = ["a"];
+    // When
+    const response = addBorder(data);
 
-        // act
-        const response = addBorder(data);
+    // Then
+    expect(response).toEqual(["*****", "**a**", "*****"]);
+  });
+  it("Should add * at the end of the of word", () => {
+    // arrange
+    const data = ["add", "dad"];
 
-        // assert
-        expect(response).toEqual([
-            "*****",
-            "*abc*",
-            "*ded*",
-            "*****"
-        ]);
-    });
+    // act
+    const response = addBorder(data);
+
+    // assert
+    expect(response).toEqual(["*****", "*add*", "*dad*", "*****"]);
+  });
 });
